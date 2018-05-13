@@ -1,0 +1,73 @@
+@charset "uft-8";
+/*
+	transform-style:preserve-3d;   变换风格  3D  添加给其父元素
+	perspective:800px;    景深
+*/
+*{
+	margin: 0;
+	padding: 0;
+}
+html {
+	height:100%;
+}
+body {
+	background: #023b3b url(../img/bg.png) no-repeat center;
+	height:100%;
+	overflow: hidden;
+	perspective:800px;
+}
+#main {
+	width: 0;
+	height: 0;
+	position: absolute;
+	top: 50%;left: 50%;
+	transform-style:preserve-3d;
+	transform: translateZ(-2000px) rotateX(0deg) rotateY(0deg);
+
+}
+li {
+	list-style-type: none;
+}
+#main li {
+	width: 120px;
+	height: 160px;
+	background: rgba(0,127,127,0.5);
+	border: 1px solid rgba(127,255,255,0.25);
+	box-shadow: 0 0 12px rgba(0,255,255,0.5);
+	cursor: pointer;
+	position: absolute;
+	top: -80px;left: -60px;
+	/*transform: translate(0px,0px);  transform 变换  translate变换是其中一种  接受两个值 水平及垂直偏移量*/
+}
+#main li:hover {
+	box-shadow: 0 0 12px rgba(0,255,255,0.75);
+	border: 1px solid rgba(127,255,255,0.75);
+}
+#btns {
+	width: 290px;
+	height: 40px;
+	position: fixed;
+	bottom:15px;
+	left: 15px;
+	transform: scale(1.5);
+	opacity: 0;
+	transition: 2s;
+}
+#btns li {
+	color:rgba(127,255,255,0.75);
+	border: 1px solid rgba(127,255,255,0.75);
+	font-size: 12px;
+	font-weight: bold;
+	font-family: "Microsoft yahei";
+	padding: 8px 14px;
+	float: left;
+	cursor: pointer;
+	border-radius: 3px;
+	margin: 0 auto;
+}
+#btns li:hover {
+	background: rgba(0,255,255,0.5);
+}
+#btns li:active {
+	color: #000;
+}
